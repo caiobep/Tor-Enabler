@@ -43,10 +43,8 @@ function disableSocksProxy() {
 
 
 function main() {
-  isTorEnabled=isTorServiceRunning 
-  isSocksProxyEnabled=isSocksProxyUp
 
-  if [ isTorEnabled == 1 ] && [ isSocksProxyEnabled == 1 ]; then
+  if isTorServiceRunning && isSocksProxyUp ; then
     stopTorDaemon
     disableSocksProxy
   else
